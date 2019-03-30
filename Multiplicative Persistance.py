@@ -3,15 +3,12 @@ from operator import mul
 import time
 
 def get_digits(number):
-
     while number:
         digit = number % 10
         yield digit
         number //= 10
 
-
 def persistence(number, count=0):
-
     if number < 10:
         return count
     new_number = reduce(mul, get_digits(number))
