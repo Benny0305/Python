@@ -14,7 +14,7 @@ x = (a * x + c) % m
 
 while x != check:
     x = (a * x + c) % m
-    print(str(round(x)), end=" ");
+    print(str(round(x)), end=" ")
     generated += 1
 
 end = time.time()
