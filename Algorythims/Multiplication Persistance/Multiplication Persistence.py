@@ -24,9 +24,9 @@ go = time.time()
 
 while persistence(start) != run_until :
     start += 1
-    while "0" in str(start):
+    while "0" in str(start) and run_until != 1 and run_until != 2:
         start +=  1
-    while "5" in str(start) and "2" in str(start):
+    while "5" in str(start) and "2" in str(start) and run_until != 1 and run_until != 2:
         start +=  1
 else: 
     print("The closest Number with that persistence is: " + str(start))
