@@ -2,34 +2,16 @@ from functools import reduce
 from operator import mul
 import time
 
-def get_digits(number):
-
-    while number:
-        digit = number % 10
-        yield digit
-        number //= 10
-
-
-def persistence(number, count=0):
-
-    if number < 10:
-        return count
-    new_number = reduce(mul, get_digits(number))
-    return persistence(new_number, count + 1)
-
-start = int(input("Enter your starting Number: "))
-run_until = int(input("Enter the desired persistence: "))
-
+x = 0
+goal = input("Enter your desired goal:")
+y = int(goal)
 go = time.time()
-
-while persistence(start) != run_until :
-    start += 1
-    while "0" in str(start):
-        start +=  1
-    while "5" in str(start) and "2" in str(start):
-        start +=  1
+while x * y != goal and y > 0:
+    x += 1
+    y -= 1
 else: 
-    print("The closest Number with that persistence is: " + str(start))
+    print(x)
+    print(y)
     end = time.time()
     ex_time = end - go
     print(f"Calculation has taken: {round(ex_time, 3)} seconds")
